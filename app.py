@@ -320,7 +320,9 @@ async def main(user_pk,user_following):
 
 
 @app.route('/followers', methods=['POST'])
-@cross_origin()
+#@cross_origin()
+@cross_origin(supports_credentials=True)
+
 def followers():
     if request.method == 'POST':
         body = request.get_json()
